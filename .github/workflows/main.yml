@@ -19,4 +19,10 @@ jobs:
         username: ${{  secrets.USER  }}
         password: ${{ secrets.PASSWD  }}
 
-        
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v6.9.0
+      with:
+        context: .
+        push: true
+        tags: |
+          reginaabarbara/dev:latest
