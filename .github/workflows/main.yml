@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    banches:
+    main
+    teste
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v3
+
+    - name: Docker Login
+      uses: docker/login-action@v3.3.0
+      with:
+        username: ${{  secrets.USER  }}
+        password: ${{ secrets.PASSWD  }}
+
+        
