@@ -3,8 +3,8 @@ name: Deploy
 on:
   push:
     banches:
-    main
-    teste
+    -  main
+    -  teste
 jobs:
   Deploy:
     runs-on: ubuntu-latest
